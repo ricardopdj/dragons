@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: #252a41;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+.form-control {
+  border-radius: 0;
+}

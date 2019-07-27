@@ -5,8 +5,15 @@ const DragonAPI = create({
 })
 
 DragonAPI.addResponseTransform(response => {
-  if (!response.ok) throw response;
+  if (!response.ok) throw response
+})
+
+DragonAPI.addResponseTransform(response => {
+  if (Array.isArray(response.data)) {
+    response.data.sort(function (a, b) {
+      return a.name.localeCompare(b.name)
+    })
+  }
 })
 
 export default DragonAPI
-;

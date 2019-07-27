@@ -6,6 +6,8 @@ const Auth = {
   authenticate(data) {
     if (data.username === username && data.password === password) {
       this.isAuthenticated = true;
+    } else {
+      throw new Error('Incorret username or password');
     } 
   },
   signout(cb) {
