@@ -30,14 +30,17 @@ class DragonList extends Component {
     const { dragons } = this.state
     return (
       <div className='container py-5'>
-        <h1 className='h3 mb-5 font-weight-normal text-white'>Dragons List</h1>
+        <h1 className='h3 mb-0 font-weight-normal text-white'>Dragons List</h1>
+        <Link 
+            to={`/dragon/add`} 
+            className='btn btn-primary mt-2 mb-5'
+          >Add Dragon</Link>
         <div className='row'>
           { 
             dragons.length > 0 && dragons.map((dragon, key) => (
-              <div className='col-12 col-sm-4 col-lg-2 mb-5 text-center'>
+              <div key={key} className='col-12 col-sm-4 col-lg-2 mb-5 text-center'>
                 <Link 
                   to={`/dragon/${dragon.id}`} 
-                  key={key}
                   className='dragon-icon'
                 >
                   <img src={Icon} width='100'/>
